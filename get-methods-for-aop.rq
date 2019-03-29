@@ -14,5 +14,5 @@ where {
  mmo:0000000 ?AssayText .
  ?aop1 dc:identifier ?AopAssoc ;
  rdfs:label ?AopLabel .
-
+ values ?aop1 {aop:12}
 }

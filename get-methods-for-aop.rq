@@ -6,10 +6,10 @@ aopo: http://aopkb.org/aop_ontology#
 prefix mmo: http://purl.obolibrary.org/obo/MMO_
 
 select ?AopLabel?KeLookUp ?AssayText where { 
-?KeLook a aopo:KeyEvent ; 
-rdfs:label ?KeLookUp ; 
-dcterms:isPartOf ?aop ; 
-mmo:0000000 ?AssayText . 
-?aop dc:identifier ?AopAssoc ; 
-rdfs:label ?AopLabel . 
-filter (?aop = aop:12) }
+  ?KeLook a aopo:KeyEvent ; 
+  rdfs:label ?KeLookUp ; 
+  dcterms:isPartOf ?aop ; 
+  mmo:0000000 ?AssayText . 
+  ?aop dc:identifier ?AopAssoc ; 
+  rdfs:label ?AopLabel . 
+  filter (?aop = aop:12) }

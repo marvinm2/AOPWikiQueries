@@ -1,0 +1,22 @@
+PREFIX dc: http://purl.org/dc/elements/1.1/ 
+PREFIX dcterms: http://purl.org/dc/terms/ 
+PREFIX rdfs: http://www.w3.org/2000/01/rdf-schema# 
+PREFIX aop: http://identifiers.org/aop/ 
+PREFIX aopo: http://aopkb.org/aop_ontology# 
+PREFIX ke: http://identifiers.org/aop.events/ 
+PREFIX stressor: http://identifiers.org/aop.stressor/ 
+PREFIX casrn: http://identifiers.org/cas/ 
+PREFIX ncit: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#
+
+SELECT ?chemicalName ?StressorLookUp ?AOPname ?AOPLookUp ?KEname ?KEofAOP where { 
+  ?chemical a cheminf:CHEMINF_000000 ; 
+  dc:title ?chemicalName ; 
+  dcterms:isPartOf ?StressorLookUp . 
+  ?StressorLookUp a ncit:C54571 ; 
+  dcterms:isPartOf ?AOPLookUp . 
+  ?AOPLookUp a aopo:AdverseOutcomePathway ; 
+  aopo:has_key_event ?KEofAOP ; 
+  dc:title ?AOPname . 
+  ?KEofAOP a aopo:KeyEvent ; 
+  dc:title ?KEname .
+  FILTER (?chemical = casrn:107-18-6) }

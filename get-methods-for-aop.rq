@@ -1,15 +1,18 @@
-PREFIX dc: http://purl.org/dc/elements/1.1/ 
-PREFIX dcterms: http://purl.org/dc/terms/ 
-PREFIX rdfs: http://www.w3.org/2000/01/rdf-schema# 
-PREFIX aop: http://identifiers.org/aop/ 
-PREFIX aopo: http://aopkb.org/aop_ontology# 
-PREFIX mmo: http://purl.obolibrary.org/obo/MMO_
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix aop: <http://identifiers.org/aop/>
+prefix aopo: <http://aopkb.org/aop_ontology#>
+prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
-SELECT ?AopLabel?KeLookUp ?AssayText WHERE { 
-  ?KeLook a aopo:KeyEvent ; 
-  rdfs:label ?KeLookUp ; 
-  dcterms:isPartOf ?aop ; 
-  mmo:0000000 ?AssayText . 
-  ?aop dc:identifier ?AopAssoc ; 
-  rdfs:label ?AopLabel . 
-  FILTER (?aop = aop:12) }
+
+select ?AopLabel?KeLookUp ?AssayText
+where {
+ ?KeLook a aopo:KeyEvent ;
+ rdfs:label ?KeLookUp ;
+ dcterms:isPartOf ?aop1 ; 
+ mmo:0000000 ?AssayText .
+ ?aop1 dc:identifier ?AopAssoc ;
+ rdfs:label ?AopLabel .
+
+}

@@ -1,25 +1,25 @@
-PREFIX dc: http://purl.org/dc/elements/1.1/ 
-PREFIX dcterms: http://purl.org/dc/terms/ 
-PREFIX cheminf: http://semanticscience.org/resource/ 
-PREFIX wdt: http://www.wikidata.org/prop/direct/ 
-PREFIX wp: http://vocabularies.wikipathways.org/wp# 
-PREFIX aopo: http://aopkb.org/aop_ontology#
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix cheminf: <http://semanticscience.org/resource/> 
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix wp: <http://vocabularies.wikipathways.org/wp#>
+prefix aopo: <http://aopkb.org/aop_ontology#>
 
-SELECT DISTINCT ?ChemicalName ?LinkedAOP ?LinkedAOPURI ?CASRN ?ChemicalURI ?PathwayID ?PathwayURI WHERE{ 
-  SELECT *WHERE { 
-    ?cheLook a cheminf:CHEMINF_000000 ; 
-    dc:identifier ?ChemicalURI ; 
-    dc:title ?ChemicalName ; 
-    cheminf:CHEMINF_000446 ?CASRN ; 
-    dcterms:isPartOf ?LinkedStressor. 
-    ?LinkedStressor dcterms:isPartOf ?LinkedAOPURI . 
-    ?LinkedAOPURI a aopo:AdverseOutcomePathway ; 
-    rdfs:label ?LinkedAOP. 
-    SERVICE https://query.wikidata.org/bigdata/namespace/wdq/sparql{ 
-      ?wikidata wdt:P231 ?CASRN. 
-      SERVICE http://sparql.wikipathways.org/{ 
-        ?metabolite wp:bdbWikidata ?wikidata; 
-        dcterms:isPartOf ?PathwayURI. 
-        ?PathwayURI a wp:Pathway ; 
-        dcterms:identifier ?PathwayID. }}}} 
-ORDER BY ?ChemicalName
+select distinct ?ChemicalName ?LinkedAOP ?LinkedAOPURI ?CASRN ?ChemicalURI ?PathwayID ?PathwayURI where{
+select *where { 
+ ?cheLook a cheminf:CHEMINF_000000 ;
+ dc:identifier ?ChemicalURI ;
+ dc:title ?ChemicalName ;
+ cheminf:CHEMINF_000446 ?CASRN ;
+ dcterms:isPartOf ?LinkedStressor.
+ ?LinkedStressor dcterms:isPartOf ?LinkedAOPURI .
+ ?LinkedAOPURI a aopo:AdverseOutcomePathway ;
+ rdfs:label ?LinkedAOP.
+ service <https://query.wikidata.org/bigdata/namespace/wdq/sparql>{
+   ?wikidata wdt:P231 ?CASRN.
+   service <http://sparql.wikipathways.org/>{
+     ?metabolite wp:bdbWikidata ?wikidata;
+     dcterms:isPartOf ?PathwayURI.
+     ?PathwayURI a wp:Pathway ;
+     dcterms:identifier ?PathwayID.
+}}}} order by ?ChemicalName

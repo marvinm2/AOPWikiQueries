@@ -1,3 +1,7 @@
+#+ summary: Lookup all MIEs that lead to a certain AO.
+#+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
+#+ method: GET
+
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>

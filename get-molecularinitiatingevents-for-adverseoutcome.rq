@@ -12,6 +12,5 @@ WHERE {
  aopo:has_adverse_outcome ?AOLookup;
  aopo:has_molecular_initiating_event ?MIE.
  ?MIE dc:title ?MIEname .
-FILTER (?KE = ke:345)
-}
+ FILTER (?KE = ke:345)}
 

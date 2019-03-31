@@ -1,3 +1,6 @@
+#+ summary: Get Molecular Initiating Events from Adverse Outcome.
+#+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
+
 prefix dc:  <http://purl.org/dc/elements/1.1/> 
 prefix aop: <http://identifiers.org/aop/> 
 prefix aopo: <http://aopkb.org/aop_ontology#> 

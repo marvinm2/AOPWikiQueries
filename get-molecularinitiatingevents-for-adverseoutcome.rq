@@ -1,6 +1,6 @@
-PREFIX dc:  <http://purl.org/dc/elements/1.1/>
-PREFIX aop: <http://identifiers.org/aop/>
-PREFIX aopo:  <http://aopkb.org/aop_ontology#>
+prefix dc:  <http://purl.org/dc/elements/1.1/> 
+prefix aop: <http://identifiers.org/aop/> 
+prefix aopo: <http://aopkb.org/aop_ontology#> 
 
 SELECT ?KE ?KEname ?AOP ?AOPname ?MIE ?MIEname WHERE { 
   ?KE a aopo:KeyEvent ; 

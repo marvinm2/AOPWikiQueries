@@ -7,6 +7,7 @@ PREFIX ke: <http://identifiers.org/aop.events/>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX casrn: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX cheminf: <http://semanticscience.org/resource/>
 
 
 SELECT ?chemicalName ?StressorLookUp ?AOPname ?AOPLookUp ?KEname ?KEofAOP

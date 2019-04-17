@@ -23,5 +23,5 @@ where {
  mmo:0000000 ?AssayText .
  ?aop1 dc:identifier ?AopAssoc ;
  rdfs:label ?AopLabel .
- value ?aop1 {?_aopfilter_iri}
+ values ?aop1 {?_aopfilter_iri}
 }

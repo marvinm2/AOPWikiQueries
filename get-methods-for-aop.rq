@@ -3,8 +3,8 @@
 #+ endpoint_in_url: False
 #+ enumerate:
 #+   - aopfilter:
-#+     - 12
-#+     - 6
+#+     - aop:12
+#+     - aop:6
 
 
 prefix dc: <http://purl.org/dc/elements/1.1/>

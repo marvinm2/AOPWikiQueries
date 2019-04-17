@@ -3,7 +3,7 @@
 #+ endpoint_in_url: False
 #+ enumerate:
 #+   - aopfilter:
-#+     - aop:12
+#+     - http://identifiers.org/aop/12
 #+     - aop:6
 
 
@@ -19,9 +19,8 @@ select ?AopLabel?KeLookUp ?AssayText
 where {
  ?KeLook a aopo:KeyEvent ;
  rdfs:label ?KeLookUp ;
- dcterms:isPartOf ?aop1 ; 
+ dcterms:isPartOf ?_aopfilter_iri ; 
  mmo:0000000 ?AssayText .
  ?aop1 dc:identifier ?AopAssoc ;
  rdfs:label ?AopLabel .
- values ?aop1 {?_aopfilter_iri}
 }

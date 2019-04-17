@@ -1,5 +1,10 @@
 #+ summary: Get methods for all Key Events of an Adverse Outcome Pathway.
 #+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
+#+ endpoint_in_url: False
+#+ enumerate:
+#+   - aopfilter:
+#+     - 12
+#+     - 6
 
 
 prefix dc: <http://purl.org/dc/elements/1.1/>
@@ -18,5 +23,5 @@ where {
  mmo:0000000 ?AssayText .
  ?aop1 dc:identifier ?AopAssoc ;
  rdfs:label ?AopLabel .
- values ?aop1 {aop:12}
+ values ?aop1 {?_aopfilter_iri}
 }

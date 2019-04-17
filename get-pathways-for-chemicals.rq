@@ -1,6 +1,6 @@
 #+ summary: Get molecular pathways that contain chemicals from AOP-Wiki.
 #+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
-
+#+ endpoint_in_url: False
 
 prefix dc: <http://purl.org/dc/elements/1.1/>
 prefix dcterms: <http://purl.org/dc/terms/>

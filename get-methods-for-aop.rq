@@ -21,6 +21,5 @@ where {
  rdfs:label ?KeLookUp ;
  dcterms:isPartOf ?_aopfilter_iri ; 
  mmo:0000000 ?AssayText .
- ?aop1 dc:identifier ?AopAssoc ;
- rdfs:label ?AopLabel .
+ ?_aopfilter_iri rdfs:label ?AopLabel .
 }

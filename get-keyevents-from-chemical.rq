@@ -1,5 +1,4 @@
 #+ summary: Get Key Events from chemcical.
-#+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
 #+ endpoint_in_url: False
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>

@@ -1,0 +1,17 @@
+prefix dc: <http://purl.org/dc/elements/1.1/> 
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix aop: <http://identifiers.org/aop/> 
+prefix aopo: <http://aopkb.org/aop_ontology#> 
+prefix ke: <http://identifiers.org/aop.events/>
+prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+prefix cheminf: <http://semanticscience.org/resource/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+SELECT ?KEname ?AOP ?MIE ?MIEname ?stressor ?chemical ?Chemname  WHERE { 
+  ?KE a aopo:KeyEvent ; dc:identifier ?AOLookup ; dc:title ?KEname . 
+  ?AOP a aopo:AdverseOutcomePathway ; dc:title ?AOPname ; aopo:has_adverse_outcome ?AOLookup; aopo:has_molecular_initiating_event ?MIE. 
+  ?MIE dc:title ?MIEname .
+  ?stressor a ncit:C54571 ; dcterms:isPartOf ?MIE .
+  ?chemical a cheminf:CHEMINF_000000 ; dcterms:isPartOf ?stressor ; dc:title ?Chemname.
+  FILTER (?KE = ke:341) } ORDER BY ASC(?AOP)

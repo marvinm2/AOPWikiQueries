@@ -1,4 +1,4 @@
-#+ summary: Get Key Events from chemcical.
+#+ summary: Get Key Events from chemical.
 #+ endpoint_in_url: False
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>

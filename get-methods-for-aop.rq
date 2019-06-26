@@ -14,15 +14,14 @@ prefix aop: <http://identifiers.org/aop/>
 prefix aopo: <http://aopkb.org/aop_ontology#>
 prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
-select   ?AopLabel?KeLookUp ?AssayText
+select   ?AopLabel ?KeLookUp ?AssayText
 where {
  ?KeLook a aopo:KeyEvent ;
  rdfs:label ?KeLookUp ;
  dcterms:isPartOf  ?aop; 
  mmo:0000000 ?AssayText .
  ?aop rdfs:label ?AopLabel .
- ?lala rdfs:label ?_aopfilter_iri .
 BIND(IRI(CONCAT("http://identifiers.org/aop/",?_aopfilter_iri)) AS ?AOPp )
-
+BIND(?_aopfilter_iri AS ?test)
 FILTER (?aop = ?AOPp)
 }

@@ -19,8 +19,7 @@ select  ?AopLabel?KeLookUp ?AssayText
 where {
  ?KeLook a aopo:KeyEvent ;
  rdfs:label ?KeLookUp ;
- dcterms:isPartOf  ?aop; 
+ dcterms:isPartOf  ?_aopfilter_iri; 
  mmo:0000000 ?AssayText .
- ?aop rdfs:label ?AopLabel .
-FILTER (?aop = ?_aopfilter_iri)
+ ?_aopfilter_iri rdfs:label ?AopLabel .
 }

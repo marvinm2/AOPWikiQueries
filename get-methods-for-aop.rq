@@ -1,5 +1,7 @@
 #+ summary: Get methods for all Key Events of an Adverse Outcome Pathway
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Methods
 #+ defaults:
 #+   - aopfilter: http://identifiers.org/aop/12
 

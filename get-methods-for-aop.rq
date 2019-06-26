@@ -22,6 +22,6 @@ where {
  mmo:0000000 ?AssayText .
  ?aop rdfs:label ?AopLabel .
 BIND(IRI(CONCAT("http://identifiers.org/aop/",?_aopfilter_iri)) AS ?AOPp )
-BIND(?_aopfilter_iri AS ?test)
+?_aopfilter_iri ?p ?test.
 FILTER (?aop = ?AOPp)
 }

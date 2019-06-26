@@ -1,8 +1,7 @@
-#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway.
+#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway
 #+ endpoint_in_url: False
-#+ enumerate:
-#+   - aopfilter
-#+     - http://identifiers.org/aop/12
+#+ defaults:
+#+   - aopfilter: http://identifiers.org/aop/12
 
 prefix dc: <http://purl.org/dc/elements/1.1/>
 prefix dcterms: <http://purl.org/dc/terms/>

@@ -23,5 +23,5 @@ where {
  dcterms:isPartOf ?aop1 ; 
  mmo:0000000 ?AssayText .
  ?aop1 dc:identifier ?AopAssoc  .
- values ?aop1 {?_aopfilter_iri}
+ filter (?aop1 = ?_aopfilter_iri)
 }

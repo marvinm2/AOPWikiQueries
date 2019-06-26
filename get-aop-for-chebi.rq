@@ -1,0 +1,15 @@
+
+#+ summary: Get AOP for a specific chemical (example uses ChEBI ID 16605).
+#+ endpoint_in_url: False
+
+SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
+WHERE {
+ ?chemical cheminf:CHEMINF_000407 ?ChEBI .
+ ?CAS skos:exactMatch ?chemical ;
+ dc:title ?ChemicalName ;
+ dcterms:isPartOf ?Stressor .
+ ?Stressor dcterms:isPartOf ?AOPwebpage .
+ ?AOPwebpage a aopo:AdverseOutcomePathway ;
+ dc:title ?AdverseOutcomePathwayName
+ VALUES ?ChEBI {"CHEBI:16605"}
+}

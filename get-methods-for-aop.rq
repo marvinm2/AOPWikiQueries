@@ -20,6 +20,7 @@ where {
  rdfs:label ?KeLookUp ;
  dcterms:isPartOf  ?aop; 
  mmo:0000000 ?AssayText .
- ?_aopfilter_iri rdfs:label ?AopLabel .
-FILTER (?aop = ?_aopfilter_iri)
+ ?aop rdfs:label ?AopLabel .
+BIND(IRI(CONCAT("http://identifiers.org/aop/",?_aopfilter_iri)) AS ?AOPp )
+FILTER (?aop = ?AOPp)
 }

@@ -1,6 +1,16 @@
-
 #+ summary: Get AOP for a specific chemical (example uses ChEBI ID 16605).
 #+ endpoint_in_url: False
+
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aop: <http://identifiers.org/aop/>
+PREFIX aopo: <http://aopkb.org/aop_ontology#>
+PREFIX ke: <http://identifiers.org/aop.events/>
+PREFIX stressor: <http://identifiers.org/aop.stressor/>
+PREFIX casrn: <http://identifiers.org/cas/>
+PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX cheminf: <http://semanticscience.org/resource/>
 
 SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
 WHERE {

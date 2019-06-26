@@ -21,7 +21,8 @@ where {
  dcterms:isPartOf  ?aop; 
  mmo:0000000 ?AssayText .
  ?aop rdfs:label ?AopLabel .
+ ?lala rdfs:label ?_aopfilter_iri .
 BIND(IRI(CONCAT("http://identifiers.org/aop/",?_aopfilter_iri)) AS ?AOPp )
- ?_aopfilter_iri a ?pass.
+
 FILTER (?aop = ?AOPp)
 }

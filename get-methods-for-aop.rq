@@ -18,5 +18,4 @@ where {
  dcterms:isPartOf ?_aopfilter_iri ; 
  mmo:0000000 ?AssayText .
  ?_aopfilter_iri rdfs:label ?AopLabel .
- ?AOP rdfs:label ?_aop_iri.
 }

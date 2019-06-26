@@ -1,7 +1,7 @@
 #+ summary: Get methods for all Key Events of an Adverse Outcome Pathway.
 #+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
 #+ endpoint_in_url: False
-#+ tags:
+#+ tags
 #+   - Measurement methods
 #+ enumerate:
 #+   - aopfilter

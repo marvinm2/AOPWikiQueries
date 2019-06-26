@@ -15,13 +15,12 @@ prefix aopo: <http://aopkb.org/aop_ontology#>
 prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
 
-select ?KeyEventID ?KeyEventName ?AssayText
+select  ?AopLabel?KeLookUp ?AssayText
 where {
  ?KeLook a aopo:KeyEvent ;
- rdfs:label ?KeyEventID ;
- dc:title ?KeyEventName ;
- dcterms:isPartOf ?aop1 ; 
+ rdfs:label ?KeLookUp ;
+ dcterms:isPartOf  ?aop; 
  mmo:0000000 ?AssayText .
- ?aop1 dc:identifier ?AopAssoc  .
- filter (?aop1 = ?_aopfilter_iri)
+ ?aop rdfs:label ?AopLabel .
+FILTER (?aop = ?_aopfilter_iri)
 }

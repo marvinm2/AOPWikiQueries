@@ -1,6 +1,12 @@
-
 #+ summary: Get Adverse Outcome that result from a specific Molecular Initiating Event(MIE). (example uses MIE of AhR activation (KE ID 18)).
 #+ endpoint_in_url: False
+
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aop: <http://identifiers.org/aop/>
+PREFIX aopo: <http://aopkb.org/aop_ontology#>
+PREFIX ke: <http://identifiers.org/aop.events/>
 
 SELECT ?MIEwebpage ?MolecularInitiatingEventName ?AOwebpage  ?AdverseOutcomeName WHERE { 
   ?MIEwebpage dc:identifier ?MIELookup ; 

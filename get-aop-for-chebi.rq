@@ -19,13 +19,8 @@ PREFIX cheminf: <http://semanticscience.org/resource/>
 prefix chebi: <https://identifiers.org/chebi/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
+SELECT ?ChEBI  
 WHERE {
  ?_chebifilter_iri cheminf:CHEMINF_000407 ?ChEBI .
- ?CAS skos:exactMatch ?_chebifilter_iri ;
- dc:title ?ChemicalName ;
- dcterms:isPartOf ?Stressor .
- ?Stressor  dcterms:isPartOf ?AOPwebpage .
- ?AOPwebpage a aopo:AdverseOutcomePathway ;
- dc:title ?AdverseOutcomePathwayName .
+
 }

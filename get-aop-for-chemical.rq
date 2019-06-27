@@ -1,5 +1,9 @@
-#+ summary: Get AOP for a specific chemical (example uses CAS 107-18-6).
+#+ summary: Get AOP for a specific chemical.
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+ defaults:
+#+   - casfilter: http://identifiers.org/cas/107-18-6
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -12,7 +16,7 @@ PREFIX casrn: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 
-SELECT ?CAS ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName ?MIEwebpage ?MolecularInitiatingEventName
+SELECT ?CAS ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName ?MIEwebpage ?MolecularInitiatingEventName ?_casfilter_iri
 WHERE {
  ?chemical a cheminf:CHEMINF_000000 ;
  dc:title ?ChemicalName ;
@@ -24,5 +28,5 @@ WHERE {
  aopo:has_molecular_initiating_event ?MIEwebpage ;
  dc:title ?AdverseOutcomePathwayName.
  ?MIEwebpage dc:title ?MolecularInitiatingEventName .
- VALUES ?chemical {casrn:107-18-6}
+ VALUES ?chemical {?_casfilter_iri}
 }

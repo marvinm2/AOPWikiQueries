@@ -1,4 +1,4 @@
-#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway. For the variable of aopfilter, fill the identifier of the AOP (only the number)
+#+ summary: Get measurement methods for all Key Events of an Adverse Outcome Pathway. For the variable of aopfilter, fill the identifier of the AOP (only the number). The default value is "3".
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Methods

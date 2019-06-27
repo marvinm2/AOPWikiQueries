@@ -1,9 +1,9 @@
-#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway. For the variable of aopfilter, fill the 
+#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway. For the variable of aopfilter, fill the identifier of the AOP (only the number)
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Methods
 #+ defaults:
-#+   - aopfilter: 12
+#+   - aopfilter: 3
 
 prefix dc: <http://purl.org/dc/elements/1.1/>
 prefix dcterms: <http://purl.org/dc/terms/>
@@ -12,7 +12,7 @@ prefix aop: <http://identifiers.org/aop/>
 prefix aopo: <http://aopkb.org/aop_ontology#>
 prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
-select   ?AopLabel?KeLookUp ?AssayText ?_aopfilter_integer
+select   (?_aopfilter_integer AS ?AOPfilter) ?AopLabel ?KeLookUp ?AssayText 
 where {
  ?KeLook a aopo:KeyEvent ;
  rdfs:label ?KeLookUp ;

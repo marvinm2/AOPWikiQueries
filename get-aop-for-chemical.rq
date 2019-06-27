@@ -13,7 +13,7 @@ PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX ke: <http://identifiers.org/aop.events/>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
-PREFIX casrn: <http://identifiers.org/cas/>
+PREFIX cas: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 

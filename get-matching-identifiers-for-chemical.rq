@@ -11,7 +11,7 @@ PREFIX cas: <http://identifiers.org/cas/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?CAS ?ChemicalName 
+SELECT ?CAS ?ChemicalName ?MatchingIDs
 WHERE {
  ?_casfilter_iri a cheminf:CHEMINF_000000 ;
  dc:title ?ChemicalName ;

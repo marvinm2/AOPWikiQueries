@@ -17,6 +17,7 @@ PREFIX casrn: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 prefix chebi: <https://identifiers.org/chebi/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
 WHERE {

@@ -1,5 +1,10 @@
 #+ summary: Get AOP for a specific chemical (example uses ChEBI ID 16605).
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+   - Chemicals
+#+ defaults:
+#+   - chebifilter: http://identifiers.org/chebi/16605
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -11,15 +16,16 @@ PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX casrn: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/>
+prefix chebi: <https://identifiers.org/chebi/>
 
 SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
 WHERE {
- ?chemical cheminf:CHEMINF_000407 ?ChEBI .
+ ?_chebifilter_iri cheminf:CHEMINF_000407 ?ChEBI .
  ?CAS skos:exactMatch ?chemical ;
  dc:title ?ChemicalName ;
  dcterms:isPartOf ?Stressor .
- ?Stressor dcterms:isPartOf ?AOPwebpage .
+ ?Stressor  a ncit:C54571 ;
+ dcterms:isPartOf ?AOPwebpage .
  ?AOPwebpage a aopo:AdverseOutcomePathway ;
- dc:title ?AdverseOutcomePathwayName
- VALUES ?ChEBI {"CHEBI:16605"}
+ dc:title ?AdverseOutcomePathwayName .
 }

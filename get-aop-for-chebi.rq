@@ -21,7 +21,7 @@ prefix chebi: <https://identifiers.org/chebi/>
 SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
 WHERE {
  ?_chebifilter_iri cheminf:CHEMINF_000407 ?ChEBI .
- ?CAS skos:exactMatch ?chemical ;
+ ?CAS skos:exactMatch ?_chebifilter_iri ;
  dc:title ?ChemicalName ;
  dcterms:isPartOf ?Stressor .
  ?Stressor  a ncit:C54571 ;

@@ -1,7 +1,8 @@
-#+ summary: Get AOP for a specific chemical.
+#+ summary: Get AOP for a specific chemical. For the variable of casfilter, fill the complete URI for the CAS-RN. This consists of "http://identifiers.org/cas/" + the CAS-RN of interest. In this example, this is "107-18-6"/ Therefore, the variable casfilter has "http://identifiers.org/cas/107-18-6" as a default value.
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Adverse Outcome Pathways
+#+   - Chemicals
 #+ defaults:
 #+   - casfilter: http://identifiers.org/cas/107-18-6
 

@@ -1,11 +1,9 @@
-#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway.
-#+ endpoint: http://aopwiki-rdf.prod.openrisknet.org/sparql/
+#+ summary: Get methods for all Key Events of an Adverse Outcome Pathway
 #+ endpoint_in_url: False
-#+ tags
-#+   - Measurement methods
-#+ enumerate:
-#+   - aopfilter
-#+     - http://identifiers.org/aop/12
+#+ tags:
+#+   - Methods
+#+ defaults:
+#+   - aopfilter: http://identifiers.org/aop/12
 
 prefix dc: <http://purl.org/dc/elements/1.1/>
 prefix dcterms: <http://purl.org/dc/terms/>
@@ -14,7 +12,7 @@ prefix aop: <http://identifiers.org/aop/>
 prefix aopo: <http://aopkb.org/aop_ontology#>
 prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
-select  ?_aopfilter_iri ?AopLabel?KeLookUp ?AssayText
+select   ?AopLabel?KeLookUp ?AssayText
 where {
  ?KeLook a aopo:KeyEvent ;
  rdfs:label ?KeLookUp ;

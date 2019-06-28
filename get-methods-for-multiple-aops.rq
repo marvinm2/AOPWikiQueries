@@ -11,7 +11,7 @@ prefix aop: <http://identifiers.org/aop/>
 prefix aopo: <http://aopkb.org/aop_ontology#>
 prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
-select  ?AopLabel?KeLookUp ?AssayText
+select  ?_aopfilter_iri ?AopLabel?KeLookUp ?AssayText
 where {
 VALUES ?aops {?_aopfilter_iri}
  ?KeLook a aopo:KeyEvent ;

@@ -1,1 +1,1 @@
-http://aopwiki-rdf.prod.openrisknet.org/sparql/
+http://localhost:8890/sparql/

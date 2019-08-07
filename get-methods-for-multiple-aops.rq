@@ -11,14 +11,14 @@ prefix aop: <http://identifiers.org/aop/>
 prefix aopo: <http://aopkb.org/aop_ontology#>
 prefix mmo: <http://purl.obolibrary.org/obo/MMO_>
 
-select  ?AopLabel?KeLookUp ?AssayText
+select  ?AopLabel ?KeLookUp ?AssayText
 where {
-?_aopfilter_iri a aopo:AdverseOutcomePathway .
-  ?_aopwikifilter2_iri a aopo:AdverseOutcomePathway .
- VALUES ?aops {?_aopfilter_iri ?_aopwikifilter2_iri}
+ BIND( iri(?id_str) as ?aopid) .
+ ?id_str apf:strSplit (?_aopfilter ",") .
+ ?aopid a aopo:AdverseOutcomePathway ;
+ rdfs:label ?AopLabel . 
  ?KeLook a aopo:KeyEvent ;
  rdfs:label ?KeLookUp ;
- dcterms:isPartOf  ?aops; 
+ dcterms:isPartOf  ?aopid; 
  mmo:0000000 ?AssayText .
- ?aops rdfs:label ?AopLabel .     
 }

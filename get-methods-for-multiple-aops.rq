@@ -2,8 +2,6 @@
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Methods
-#+ defaults:
-#+   - aopfilter: http://identifiers.org/aop/3
 
 prefix dcterms: <http://purl.org/dc/terms/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -15,7 +13,7 @@ prefix apf: <http://jena.apache.org/ARQ/property#>
 select  ?AopLabel ?KeLookUp ?AssayText
 where {
  BIND( iri(?id_str) as ?aopid) .
- ?id_str apf:strSplit (?_aopfilter ",") .
+ ?id_str apf:strSplit (?_aopfilter_string ",") .
  ?aopid a aopo:AdverseOutcomePathway ;
  rdfs:label ?AopLabel . 
  ?KeLook a aopo:KeyEvent ;

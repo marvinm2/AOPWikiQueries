@@ -1,6 +1,9 @@
+#+ summary: Retrieve all chemicals for AOP 37.
 #+ endpoint_in_url: False
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+   - Chemicals
+
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>

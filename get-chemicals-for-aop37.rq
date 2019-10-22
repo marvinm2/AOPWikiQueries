@@ -1,0 +1,12 @@
+#+ summary: Get all chemical that are part of a particular AOP.
+#+ endpoint_in_url: False
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+   - Chemicals
+
+PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+SELECT ?CAS_ID
+WHERE{
+aop:37 a aopo:AdverseOutcomePathway; ncit:C54571 ?Stressor.
+?Stressor aopo:has_chemical_entity ?Chemical.
+?Chemical cheminf:CHEMINF_000446 ?CAS_ID.}

@@ -7,9 +7,9 @@
 #+   - aopfilter: http://identifiers.org/aop/37
 
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
-SELECT ?CAS_ID
+SELECT ?CASID
 WHERE{
 ?_aopfilter_iri a aopo:AdverseOutcomePathway; ncit:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
-?Chemical cheminf:CHEMINF_000446 ?CAS_ID.
+?Chemical cheminf:CHEMINF_000446 ?CASID.
 }

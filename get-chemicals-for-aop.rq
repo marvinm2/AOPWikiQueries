@@ -11,4 +11,5 @@ SELECT ?CAS_ID
 WHERE{
 ?_aopfilter_iri a aopo:AdverseOutcomePathway; ncit:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
-?Chemical cheminf:CHEMINF_000446 ?CAS_ID.}
+?Chemical cheminf:CHEMINF_000446 ?CAS_ID.
+}

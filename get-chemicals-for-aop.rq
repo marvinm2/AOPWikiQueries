@@ -13,7 +13,7 @@ PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX cas: <http://identifiers.org/cas/>
 PREFIX cheminf: <http://semanticscience.org/resource/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
-SELECT ?CASID
+SELECT ?CASID ?_aopfilter_integer
 WHERE{
 ?aop a aopo:AdverseOutcomePathway; ncit:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.

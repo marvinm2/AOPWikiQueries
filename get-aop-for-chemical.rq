@@ -15,13 +15,13 @@ PREFIX ke: <http://identifiers.org/aop.events/>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX cas: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
-PREFIX cheminf: <http://semanticscience.org/resource/>
+PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 
 SELECT ?CAS ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName ?MIEwebpage ?MolecularInitiatingEventName
 WHERE {
- ?_casfilter_iri a cheminf:CHEMINF_000000 ;
+ ?_casfilter_iri a cheminf:000000 ;
  dc:title ?ChemicalName ;
- cheminf:CHEMINF_000446 ?CAS ;
+ cheminf:000446 ?CAS ;
  dcterms:isPartOf ?Stressor .
  ?Stressor a ncit:C54571 ;
  dcterms:isPartOf ?AOPwebpage .

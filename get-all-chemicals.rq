@@ -6,12 +6,12 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cas: <http://identifiers.org/cas/>
-PREFIX cheminf: <http://semanticscience.org/resource/>
+PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 
 
 SELECT ?CAS ?ChemicalName
 WHERE {
- ?cas a cheminf:CHEMINF_000000 ;
+ ?cas a cheminf:000000 ;
  dc:title ?ChemicalName ;
- cheminf:CHEMINF_000446 ?CAS . 
+ cheminf:000446 ?CAS . 
 }

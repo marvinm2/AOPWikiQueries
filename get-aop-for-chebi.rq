@@ -15,13 +15,13 @@ PREFIX ke: <http://identifiers.org/aop.events/>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX casrn: <http://identifiers.org/cas/>
 PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
-PREFIX cheminf: <http://semanticscience.org/resource/>
+PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 prefix chebi: <https://identifiers.org/chebi/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
 WHERE {
- ?_chebifilter_iri cheminf:CHEMINF_000407 ?ChEBI .
+ ?_chebifilter_iri cheminf:000407 ?ChEBI .
  ?CAS skos:exactMatch ?_chebifilter_iri ;
  dc:title ?ChemicalName ;
  dcterms:isPartOf ?Stressor .

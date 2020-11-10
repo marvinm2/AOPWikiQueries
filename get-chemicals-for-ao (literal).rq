@@ -1,0 +1,15 @@
+#+ summary: Get Stressor Chemicals described to initiate AOPs that lead to selected Adverse Outcome (literal).
+#+ endpoint_in_url: False
+
+SELECT ?AO ?AOname ?AOP (CONCAT('"',GROUP_CONCAT(?ChemicalName;SEPARATOR='","'),'"') AS ?ChemicalNames) WHERE {
+  ?AO a aopo:KeyEvent ; 
+  dc:identifier ?AOLookup ; 
+  dc:title ?AOname . 
+  ?AOP a aopo:AdverseOutcomePathway ; 
+  aopo:has_adverse_outcome ?AOLookup ;
+  nci:C54571 ?Stressor .
+  ?Stressor dc:title ?StressorName.
+  OPTIONAL {?Stressor aopo:has_chemical_entity ?Chemical. 
+            ?Chemical dc:title ?ChemicalName.}
+  FILTER regex (?AOname, ?_KEfilter_en)}
+  ORDER BY DESC (?AO)

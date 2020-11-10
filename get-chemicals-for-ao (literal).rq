@@ -14,5 +14,5 @@ SELECT ?AO ?AOname ?AOP (CONCAT('"',GROUP_CONCAT(?ChemicalName;SEPARATOR='","'),
   ?Stressor dc:title ?StressorName.
   OPTIONAL {?Stressor aopo:has_chemical_entity ?Chemical. 
             ?Chemical dc:title ?ChemicalName.}
-  FILTER regex (?AOname, ?_KEfilter_en)}
+  FILTER regex (?AOname, ?_KEfilter_en, "i")}
   ORDER BY DESC (?AO)

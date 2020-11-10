@@ -17,5 +17,5 @@ SELECT ?AO ?AOname ?StressorName ?ChemicalName WHERE {
   ?Stressor dc:title ?StressorName.
   OPTIONAL {?Stressor aopo:has_chemical_entity ?Chemical. 
             ?Chemical dc:title ?ChemicalName.}
-  FILTER regex (?AOname, ?_KEfilter_en)}
+  FILTER regex (?AOname, ?_KEfilter_en, "i")}
   ORDER BY DESC (?AO)

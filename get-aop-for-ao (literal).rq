@@ -13,4 +13,4 @@ SELECT ?KE ?KEname ?AOP ?AOPname WHERE {
   ?AOP a aopo:AdverseOutcomePathway ; 
   dc:title ?AOPname ; 
   aopo:has_adverse_outcome ?AOLookup.
-  FILTER regex (?KEname, ?_KEfilter_en)}
+  FILTER regex (?KEname, ?_KEfilter_en, "i")}

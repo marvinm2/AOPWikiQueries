@@ -1,5 +1,10 @@
 #+ summary: Get Stressor Chemicals described to initiate AOPs that lead to selected Adverse Outcome (ID).
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Chemicals
+#+   - Adverse Outcome
+#+ defaults:
+#+   - aofilter: 344
 
 prefix dc:  <http://purl.org/dc/elements/1.1/> 
 prefix aop: <http://identifiers.org/aop/> 

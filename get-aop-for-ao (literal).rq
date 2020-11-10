@@ -1,4 +1,4 @@
-#+ summary: Get Adverse Outcome Pathways from Adverse Outcome.
+#+ summary: Get Adverse Outcome Pathways from Adverse Outcome name (literal).
 #+ endpoint_in_url: False
 
 prefix dc:  <http://purl.org/dc/elements/1.1/> 

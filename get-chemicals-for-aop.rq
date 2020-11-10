@@ -12,10 +12,10 @@ PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX cas: <http://identifiers.org/cas/>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
-PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 SELECT ?CASID  ?_aopfilter_integer
 WHERE{
-?aop a aopo:AdverseOutcomePathway; ncit:C54571 ?Stressor.
+?aop a aopo:AdverseOutcomePathway; nci:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
 ?Chemical cheminf:000446 ?CASID.
 BIND(IRI(CONCAT("http://identifiers.org/aop/",?_aopfilter_integer)) AS ?AOPf )

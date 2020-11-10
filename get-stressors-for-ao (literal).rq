@@ -5,6 +5,7 @@ prefix dc:  <http://purl.org/dc/elements/1.1/>
 prefix aop: <http://identifiers.org/aop/> 
 prefix aopo: <http://aopkb.org/aop_ontology#> 
 prefix ke: <http://identifiers.org/aop.events/>
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 
 SELECT ?AO ?AOname ?StressorName ?ChemicalName WHERE { 
   ?AO a aopo:KeyEvent ; 

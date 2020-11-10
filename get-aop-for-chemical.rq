@@ -14,7 +14,7 @@ PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX ke: <http://identifiers.org/aop.events/>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX cas: <http://identifiers.org/cas/>
-PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 
 SELECT ?CAS ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName ?MIEwebpage ?MolecularInitiatingEventName
@@ -23,7 +23,7 @@ WHERE {
  dc:title ?ChemicalName ;
  cheminf:000446 ?CAS ;
  dcterms:isPartOf ?Stressor .
- ?Stressor a ncit:C54571 ;
+ ?Stressor a nci:C54571 ;
  dcterms:isPartOf ?AOPwebpage .
  ?AOPwebpage a aopo:AdverseOutcomePathway ;
  aopo:has_molecular_initiating_event ?MIEwebpage ;

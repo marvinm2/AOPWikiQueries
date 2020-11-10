@@ -8,10 +8,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
-PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 
 SELECT ?cas
 WHERE{
-aop:37 a aopo:AdverseOutcomePathway; ncit:C54571 ?Stressor.
+aop:37 a aopo:AdverseOutcomePathway; nci:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
 ?Chemical cheminf:000446 ?cas.}

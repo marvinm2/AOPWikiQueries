@@ -1,6 +1,9 @@
 #+ summary: Get Stressor Chemicals described to initiate AOPs that lead to selected Adverse Outcome (literal).
 #+ endpoint_in_url: False
 
+
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+
 SELECT ?AO ?AOname ?AOP (CONCAT('"',GROUP_CONCAT(?ChemicalName;SEPARATOR='","'),'"') AS ?ChemicalNames) WHERE {
   ?AO a aopo:KeyEvent ; 
   dc:identifier ?AOLookup ; 

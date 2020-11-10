@@ -14,7 +14,7 @@ PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX ke: <http://identifiers.org/aop.events/>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>
 PREFIX casrn: <http://identifiers.org/cas/>
-PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 prefix chebi: <https://identifiers.org/chebi/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
@@ -25,7 +25,7 @@ WHERE {
  ?CAS skos:exactMatch ?_chebifilter_iri ;
  dc:title ?ChemicalName ;
  dcterms:isPartOf ?Stressor .
- ?Stressor  a ncit:C54571 ;
+ ?Stressor  a nci:C54571 ;
  dcterms:isPartOf ?AOPwebpage .
  ?AOPwebpage a aopo:AdverseOutcomePathway ;
  dc:title ?AdverseOutcomePathwayName .

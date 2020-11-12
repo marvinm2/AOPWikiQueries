@@ -1,6 +1,6 @@
 #+ summary: Get Adverse Outcome Pathways from Adverse Outcome URI.
 #+ endpoint_in_url: False
-
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 prefix aop: <http://identifiers.org/aop/> 
 prefix aopo: <http://aopkb.org/aop_ontology#> 
 prefix ke: <http://identifiers.org/aop.events/>

@@ -1,0 +1,2 @@
+select distinct ?concept where 
+{?s a ?concept.}

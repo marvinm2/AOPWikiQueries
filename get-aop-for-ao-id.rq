@@ -1,0 +1,12 @@
+#+ summary: Get Adverse Outcome Pathways from Adverse Outcome URI.
+#+ endpoint_in_url: False
+
+prefix aop: <http://identifiers.org/aop/> 
+prefix aopo: <http://aopkb.org/aop_ontology#> 
+prefix ke: <http://identifiers.org/aop.events/>
+
+SELECT ?AOP WHERE { 
+  ?AO a aopo:KeyEvent . 
+  ?AOP a aopo:AdverseOutcomePathway ; 
+  aopo:has_adverse_outcome ?AO.
+  FILTER (?AO = ?_aofilter_uri)}

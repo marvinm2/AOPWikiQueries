@@ -1,1 +1,1 @@
-http://aopwiki-rdf.prod.openrisknet.org/sparql/
+https://aopwiki.rdf.bigcat-bioinformatics.org/sparql/

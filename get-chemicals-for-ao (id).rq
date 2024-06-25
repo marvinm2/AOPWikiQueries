@@ -1,8 +1,20 @@
+#+ summary: Get all chemical that are part of a particular AOP.
+#+ endpoint_in_url: False
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+   - Chemicals
+#+ defaults:
+#+   - aofilter: 341
+
+PREFIX aopo: <http://aopkb.org/aop_ontology#>
+PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
+
 SELECT DISTINCT ?AOname ?MIEname ?CASID ?ChemicalName  WHERE { 
   ?AO a aopo:KeyEvent ; dc:title ?AOname . 
   ?AOP a aopo:AdverseOutcomePathway ;  aopo:has_adverse_outcome ?AO ; aopo:has_molecular_initiating_event ?MIE. 
   ?MIE dc:title ?MIEname .
   ?stressor a nci:C54571 ; dcterms:isPartOf ?MIE .
   ?chemical a cheminf:000000 ; dcterms:isPartOf ?stressor ; dc:title ?ChemicalName ; cheminf:000446 ?CASID.
-FILTER regex(str(?AOname), "Impairment, Learning and memory") 
+BIND(IRI(CONCAT("http://identifiers.org/aop.events/",?_aofilter_integer)) AS ?AOf )
+FILTER (?AO = ?AOf)
 }

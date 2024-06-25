@@ -6,7 +6,6 @@
 #+ defaults:
 #+   - aopfilter: 37
 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX stressor: <http://identifiers.org/aop.stressor/>

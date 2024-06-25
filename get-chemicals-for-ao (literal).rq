@@ -1,6 +1,10 @@
-#+ summary: Get Stressor Chemicals described to initiate AOPs that lead to selected Adverse Outcome (literal).
+#+ summary: Get Stressor chemicals described to initiate AOPs that lead to selected Adverse Outcome (literal).
 #+ endpoint_in_url: False
-
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+   - Chemicals
+#+ defaults:
+#+   - KEfilter: fibrosis
 
 PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>

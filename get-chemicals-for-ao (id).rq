@@ -8,6 +8,7 @@
 
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
+PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 
 SELECT DISTINCT ?AOname ?MIEname ?CASID ?ChemicalName  WHERE { 
   ?AO a aopo:KeyEvent ; dc:title ?AOname . 

@@ -11,7 +11,7 @@ PREFIX cheminf: <http://semanticscience.org/resource/>
 
 SELECT ?chemicalName ?StressorLookUp ?AOPname ?AOPLookUp ?KEname ?KEofAOP
 WHERE {
- ?chemical a cheminf:CHEMINF_000000 ; cheminf:CHEMINF_000000 ?CAS ;
+ ?chemical a cheminf:CHEMINF_000000 ; cheminf:CHEMINF_000446 ?CAS ;
  dc:title ?chemicalName ;
  dcterms:isPartOf ?StressorLookUp .
  ?StressorLookUp a nci:C54571 ;

@@ -1,7 +1,6 @@
 #+ summary: Get all chemical that are part of a particular AOP.
 #+ endpoint_in_url: False
 #+ tags:
-#+   - Adverse Outcome Pathways
 #+   - Chemicals
 #+ defaults:
 #+   - aofilter: 341

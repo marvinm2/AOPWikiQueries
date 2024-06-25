@@ -2,7 +2,6 @@
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Chemicals
-#+   - Adverse Outcome
 #+ defaults:
 #+   - aofilter: 344
 

@@ -1,7 +1,6 @@
 #+ summary: Get Stressor chemicals described to initiate AOPs that lead to selected Adverse Outcome (literal).
 #+ endpoint_in_url: False
 #+ tags:
-#+   - Adverse Outcome Pathways
 #+   - Chemicals
 #+ defaults:
 #+   - KEfilter: fibrosis

@@ -1,4 +1,4 @@
-#+ summary: Get Molecular Initiating Events from Adverse Outcome.
+#+ summary: Get Molecular Initiating Events from Adverse Outcome (literal).
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Key Events
@@ -19,4 +19,4 @@ SELECT ?KE ?KEname ?AOP ?AOPname ?MIE ?MIEname WHERE {
   aopo:has_molecular_initiating_event ?MIE. 
   ?MIE dc:title ?MIEname .
 BIND(IRI(CONCAT("https://identifiers.org/aop.events/",?_AOfilter_integer)) AS ?AOf )
-FILTER (?AO = ?AOf)} }
+FILTER (?AO = ?AOf) }

@@ -22,5 +22,5 @@ WHERE {
  ?KEofAOP a aopo:KeyEvent ;
  dc:title ?KEname .
 
-FILTER regex (?CAS, ?_CASfilter_en, "i")}
+FILTER regex (?CAS, ?_CASfilter_en, "i")
 }

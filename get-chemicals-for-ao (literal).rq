@@ -3,6 +3,7 @@
 
 
 PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX aopo: <http://aopkb.org/aop_ontology#>
 
 SELECT ?AO ?AOname ?AOP (CONCAT('"',GROUP_CONCAT(?ChemicalName;SEPARATOR='","'),'"') AS ?ChemicalNames) WHERE {
   ?AO a aopo:KeyEvent ; 

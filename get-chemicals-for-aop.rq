@@ -6,12 +6,10 @@
 #+ defaults:
 #+   - aopfilter: 37
 
-PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
-PREFIX stressor: <http://identifiers.org/aop.stressor/>
-PREFIX cas: <http://identifiers.org/cas/>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+
 SELECT ?CASID  ?_aopfilter_integer
 WHERE{
 ?aop a aopo:AdverseOutcomePathway; nci:C54571 ?Stressor.

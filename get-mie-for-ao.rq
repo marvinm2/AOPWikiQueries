@@ -1,13 +1,16 @@
 #+ summary: Get Molecular Initiating Events from Adverse Outcome.
 #+ endpoint_in_url: False
-
-prefix dc:  <http://purl.org/dc/elements/1.1/> 
+#+ tags:
+#+   - Key Events
+#+ defaults:
+#+   - AOfilter: 341
+ 
 prefix aop: <http://identifiers.org/aop/> 
 prefix aopo: <http://aopkb.org/aop_ontology#> 
 PREFIX ke: <http://identifiers.org/aop.events/>
 
 SELECT ?KE ?KEname ?AOP ?AOPname ?MIE ?MIEname WHERE { 
-  ?KE a aopo:KeyEvent ; 
+  ?AO a aopo:KeyEvent ; 
   dc:identifier ?AOLookup ; 
   dc:title ?KEname . 
   ?AOP a aopo:AdverseOutcomePathway ; 
@@ -15,4 +18,5 @@ SELECT ?KE ?KEname ?AOP ?AOPname ?MIE ?MIEname WHERE {
   aopo:has_adverse_outcome ?AOLookup; 
   aopo:has_molecular_initiating_event ?MIE. 
   ?MIE dc:title ?MIEname .
-  FILTER (?KE = ke:345) }
+BIND(IRI(CONCAT("https://identifiers.org/aop.events/",?_AOfilter_integer)) AS ?AOf )
+FILTER (?AO = ?AOf)} }

@@ -1,7 +1,10 @@
 #+ summary: Get Adverse Outcome Pathways from Adverse Outcome name (literal).
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Adverse Outcome Pathways
+#+ defaults:
+#+   - AOfilter: 341
 
-prefix dc:  <http://purl.org/dc/elements/1.1/> 
 prefix aop: <http://identifiers.org/aop/> 
 prefix aopo: <http://aopkb.org/aop_ontology#> 
 prefix ke: <http://identifiers.org/aop.events/>
@@ -13,4 +16,4 @@ SELECT ?KE ?KEname ?AOP ?AOPname WHERE {
   ?AOP a aopo:AdverseOutcomePathway ; 
   dc:title ?AOPname ; 
   aopo:has_adverse_outcome ?AOLookup.
-  FILTER regex (?KEname, ?_KEfilter_en, "i")}
+ FILTER regex (?AOname, ?_AOfilter_en, "i")}

@@ -1,7 +1,10 @@
 #+ summary: Get Stressor Chemicals described to initiate AOPs that lead to selected Adverse Outcome (literal).
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Chemicals
+#+ defaults:
+#+   - AOfilter: 341
 
-prefix dc:  <http://purl.org/dc/elements/1.1/> 
 prefix aop: <http://identifiers.org/aop/> 
 prefix aopo: <http://aopkb.org/aop_ontology#> 
 prefix ke: <http://identifiers.org/aop.events/>
@@ -17,5 +20,5 @@ SELECT ?AO ?AOname ?StressorName ?ChemicalName WHERE {
   ?Stressor dc:title ?StressorName.
   OPTIONAL {?Stressor aopo:has_chemical_entity ?Chemical. 
             ?Chemical dc:title ?ChemicalName.}
-  FILTER regex (?AOname, ?_KEfilter_en, "i")}
+  FILTER regex (?AOname, ?_AOfilter_en, "i")}
   ORDER BY DESC (?AO)

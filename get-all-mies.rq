@@ -1,0 +1,13 @@
+#+ summary: Get all AOPs that are present in the AOP-Wiki.
+#+ endpoint_in_url: False
+#+ tags:
+#+   - Dump
+
+PREFIX aopo: <http://aopkb.org/aop_ontology#>
+
+SELECT ?MIE ?MIETitle ?MIEID
+WHERE {
+ ?AOP a aopo:AdverseOutcomePathway ; aopo:has_molecular_initiating_event ?MIE .
+ ?MIE dc:title MIETitle ;
+ rdfs:label ?MIEID . 
+}

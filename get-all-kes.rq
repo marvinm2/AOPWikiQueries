@@ -1,0 +1,13 @@
+#+ summary: Get all AOPs that are present in the AOP-Wiki.
+#+ endpoint_in_url: False
+#+ tags:
+#+   - Dump
+
+PREFIX aopo: <http://aopkb.org/aop_ontology#>
+
+SELECT ?KE ?KETitle ?KEID
+WHERE {
+ ?KE a aopo:KeyEvent ;
+ dc:title ?KETitle ;
+ rdfs:label ?KEID . 
+}

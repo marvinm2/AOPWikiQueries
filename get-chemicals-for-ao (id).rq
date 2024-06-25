@@ -15,6 +15,6 @@ SELECT DISTINCT ?AOname ?CASID   WHERE {
   ?AOP a aopo:AdverseOutcomePathway ;  aopo:has_adverse_outcome ?AO ; nci:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
 ?Chemical cheminf:000446 ?CASID.
-BIND(IRI(CONCAT("https://identifiers.org/aop.events/","341")) AS ?AOf )
+BIND(IRI(CONCAT("https://identifiers.org/aop.events/",?_aopfilter_integer)) AS ?AOf )
 FILTER (?AO = ?AOf)
 }

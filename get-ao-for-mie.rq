@@ -1,18 +1,23 @@
 #+ summary: Get Adverse Outcome that result from a specific Molecular Initiating Event(MIE). (example uses MIE of AhR activation (KE ID 18)).
 #+ endpoint_in_url: False
+#+ tags:
+#+   - Key Events
+#+ defaults:
+#+   - MIEfilter: 18
 
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX ke: <http://identifiers.org/aop.events/>
 
-SELECT ?MIEwebpage ?MolecularInitiatingEventName ?AOwebpage  ?AdverseOutcomeName WHERE { 
-  ?MIEwebpage dc:identifier ?MIELookup ; 
+SELECT ?MIE ?MolecularInitiatingEventName ?AOwebpage  ?AdverseOutcomeName WHERE { 
+  ?MIE dc:identifier ?MIELookup ; 
   dc:title ?MolecularInitiatingEventName . 
   ?AOPwebpage a aopo:AdverseOutcomePathway ; 
   aopo:has_molecular_initiating_event ?MIELookup; 
   aopo:has_adverse_outcome ?AOwebpage. 
   ?AOwebpage dc:title ?AdverseOutcomeName .
-  FILTER (?MIEwebpage = ke:18)}
+
+BIND(IRI(CONCAT("https://identifiers.org/aop.events/",?_MIEfilter_integer)) AS ?MIEf )
+FILTER (?MIE = ?MIEf)
+}

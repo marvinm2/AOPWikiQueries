@@ -10,11 +10,11 @@ PREFIX aopo: <http://aopkb.org/aop_ontology#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 
-SELECT ?CASID  ?_aopfilter_integer
+SELECT ?CASID ?ChemicalName
 WHERE{
 ?aop a aopo:AdverseOutcomePathway; nci:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
-?Chemical cheminf:000446 ?CASID.
+?Chemical cheminf:000446 ?CASID; dc:title ?ChemicalName.
 BIND(IRI(CONCAT("https://identifiers.org/aop/",?_aopfilter_integer)) AS ?AOPf )
 FILTER (?aop = ?AOPf)
 }

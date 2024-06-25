@@ -1,7 +1,7 @@
 #+ summary: Get Key Events from chemical (CAS ID).
 #+ endpoint_in_url: False
 #+ tags:
-#+   - Chemicals
+#+   - Key Events
 #+ defaults:
 #+   - CASfilter: 107-18-6
 

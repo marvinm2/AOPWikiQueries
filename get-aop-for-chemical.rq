@@ -1,25 +1,17 @@
-#+ summary: Get AOP for a specific chemical. For the variable of casfilter, fill the complete URI for the CAS-RN. This consists of "http://identifiers.org/cas/" + the CAS-RN of interest. In this example, this is "107-18-6"/ Therefore, the variable casfilter has "http://identifiers.org/cas/107-18-6" as a default value.
+#+ summary: Get AOP for a specific chemical (CAS ID). For the variable of casfilter, fill the CAS-RN of interest. 
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Adverse Outcome Pathways
-#+   - Chemicals
 #+ defaults:
-#+   - casfilter: http://identifiers.org/cas/107-18-6
+#+   - casfilter: 107-18-6
 
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX aop: <http://identifiers.org/aop/>
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
-PREFIX ke: <http://identifiers.org/aop.events/>
-PREFIX stressor: <http://identifiers.org/aop.stressor/>
-PREFIX cas: <http://identifiers.org/cas/>
 PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
 
 SELECT ?CAS ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName ?MIEwebpage ?MolecularInitiatingEventName
 WHERE {
- ?_casfilter_iri a cheminf:000000 ;
+ ?Chemical a cheminf:000000 ;
  dc:title ?ChemicalName ;
  cheminf:000446 ?CAS ;
  dcterms:isPartOf ?Stressor .
@@ -29,4 +21,5 @@ WHERE {
  aopo:has_molecular_initiating_event ?MIEwebpage ;
  dc:title ?AdverseOutcomePathwayName.
  ?MIEwebpage dc:title ?MolecularInitiatingEventName .
+FILTER regex (?CAS, ?_CASfilter_en, "i")
 }

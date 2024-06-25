@@ -1,7 +1,7 @@
 #+ summary: Get molecular pathways that contain chemicals from AOP-Wiki.
 #+ endpoint_in_url: False
 #+ tags:
-#+   - Chemicals
+#+   - Pathways
 #+ defaults:
 #+   - KEfilter: rotenone
 

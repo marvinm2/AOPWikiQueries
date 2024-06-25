@@ -1,32 +1,24 @@
-#+ summary: Get AOP for a specific chemical (example uses ChEBI ID 16605).
+#+ summary: Get AOP for a specific chemical (ChEBI ID). Use the ChEBI ID without "ChEBI" in front for the filter.
 #+ endpoint_in_url: False
 #+ tags:
 #+   - Adverse Outcome Pathways
-#+   - Chemicals
 #+ defaults:
-#+   - chebifilter: https://identifiers.org/chebi/16605
+#+   - ChEBIfilter: 16605
 
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX aop: <http://identifiers.org/aop/>
+
 PREFIX aopo: <http://aopkb.org/aop_ontology#>
-PREFIX ke: <http://identifiers.org/aop.events/>
-PREFIX stressor: <http://identifiers.org/aop.stressor/>
-PREFIX casrn: <http://identifiers.org/cas/>
 PREFIX nci: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX cheminf: <http://semanticscience.org/resource/CHEMINF_>
-prefix chebi: <https://identifiers.org/chebi/>
-prefix skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?ChEBI  ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
+SELECT ?ChEBI ?ChemicalName ?AOPwebpage ?AdverseOutcomePathwayName
 WHERE {
- ?_chebifilter_iri cheminf:000407 ?ChEBI .
- ?CAS skos:exactMatch ?_chebifilter_iri ;
+ ?matchID cheminf:000407 ?ChEBI .
+ ?CAS skos:exactMatch ?matchID ;
  dc:title ?ChemicalName ;
  dcterms:isPartOf ?Stressor .
  ?Stressor  a nci:C54571 ;
  dcterms:isPartOf ?AOPwebpage .
  ?AOPwebpage a aopo:AdverseOutcomePathway ;
  dc:title ?AdverseOutcomePathwayName .
+FILTER regex (?ChEBI, ?_ChEBIfilter_en, "i")
 }

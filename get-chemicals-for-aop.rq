@@ -17,6 +17,6 @@ WHERE{
 ?aop a aopo:AdverseOutcomePathway; nci:C54571 ?Stressor.
 ?Stressor aopo:has_chemical_entity ?Chemical.
 ?Chemical cheminf:000446 ?CASID.
-BIND(IRI(CONCAT("http://identifiers.org/aop/",?_aopfilter_integer)) AS ?AOPf )
+BIND(IRI(CONCAT("https://identifiers.org/aop/",?_aopfilter_integer)) AS ?AOPf )
 FILTER (?aop = ?AOPf)
 }
